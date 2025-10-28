@@ -20,7 +20,7 @@ def main():
     if system_argument[-1] == "-l":
         print("Cows available:", end=" ")
         print(" ".join(cows_available))
-    elif "-n" not in system_argument:
+    elif system_argument[1] != "-n":
         cow = get_cow("heifer", cows)
         print(" ".join(system_argument[1:]))
         print(cow.image)
