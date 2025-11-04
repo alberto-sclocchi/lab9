@@ -1,5 +1,6 @@
 import sys
 from heifer_generator import get_cows
+from dragon import Dragon
 
 def list_cows(cows):
     return [cow.name for cow in cows]
@@ -29,6 +30,12 @@ def main():
             cow = get_cow(system_argument[2], cows)
             print(" ".join(system_argument[3:]))
             print(cow.image)
+
+            if isinstance(cow, Dragon):
+                if cow.can_breath_fire():
+                    print("This dragon can breathe fire.")
+                else:
+                    print("This dragon cannot breathe fire.")
         else:
             print(f"Could not find {system_argument[2]} cow!")
 
